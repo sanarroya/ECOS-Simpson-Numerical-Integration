@@ -1,6 +1,6 @@
 # Simpson numerical integration
 
-program to numerically integrate a function using Simpson’s rule, using the t distribution as the function.
+Program to numerically integrate a function using Simpson’s rule, using the t distribution as the function.
 
 ## Running Locally
 
