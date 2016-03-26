@@ -18,5 +18,5 @@ Your app should now be running on [localhost:5000](http://localhost:5000/).
 ## Heroku
 
 To access the application on heroku go to the following link:
-CHANGE THE LINK!!!!
-- [Simpson numerical integration](https://hidden-brook-36984.herokuapp.com/calculateRelativeSizeValues)
+
+- [Simpson numerical integration](https://shrouded-hamlet-63058.herokuapp.com/simpsonIntegral)
