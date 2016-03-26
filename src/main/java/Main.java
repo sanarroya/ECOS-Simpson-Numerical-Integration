@@ -32,7 +32,7 @@ public class Main {
         }, new FreeMarkerEngine());
     
     get("/simpsonIntegral", (req, res) -> {
-        return "";
+        return "SIMPSON INTEGRAL";
     });
     
     get("/db", (req, res) -> {
