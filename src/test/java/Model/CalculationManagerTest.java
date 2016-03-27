@@ -38,17 +38,16 @@ public class CalculationManagerTest {
     }
 
     /**
-     * Test of tDistribution method, of class CalculationManager.
+     * Test of simpsonIntegral method, of class CalculationManager.
      */
     @Test
-    public void testTDistribution() {
-        System.out.println("tDistribution");
-        IntegralInfo integralInfo = null;
-        double expResult = 0.0;
-        double result = CalculationManager.tDistribution(integralInfo);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testSimpsonIntegral() {
+        System.out.println("simpsonIntegral");
+        IntegralInfo integralInfo = new IntegralInfo(9, 0, 1.1);
+        double expResult = 0.3500589;
+        double result = CalculationManager.simpsonIntegral(integralInfo);
+        System.out.println("simpsonIntegral result " + result);
+        assertEquals(expResult, result, 1.0);
     }
 
     /**
@@ -58,9 +57,23 @@ public class CalculationManagerTest {
     public void testGammaFunction() {
         System.out.println("gammaFunction");
         double value = 0.0;
-        CalculationManager instance = new CalculationManager();
         double expResult = 0.0;
-        double result = instance.gammaFunction(value);
+        double result = CalculationManager.gammaFunction(value);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of tDistributionFunction method, of class CalculationManager.
+     */
+    @Test
+    public void testTDistributionFunction() {
+        System.out.println("tDistributionFunction");
+        IntegralInfo integralInfo = null;
+        double value = 0.0;
+        double expResult = 0.0;
+        double result = CalculationManager.tDistributionFunction(integralInfo, value);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

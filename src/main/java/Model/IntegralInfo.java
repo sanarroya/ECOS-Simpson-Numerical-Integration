@@ -27,7 +27,6 @@ public class IntegralInfo {
      * 
      * @param numberOfSegments to integrate
      * @param segmentWidth width of each segment
-     * @param acceptableError 
      * @param degreesOfFreedom Integration degrees of freedom
      * @param integralLowerLimit Lower limit of the interval in which we will integrate
      * @param integralUpperLimit Upper limit of the interval in which we will integrate
@@ -119,7 +118,7 @@ public class IntegralInfo {
     }
 
     /**
-     *Integral resul setter
+     *Integral result setter
      * 
      * @param integralResult
      */
