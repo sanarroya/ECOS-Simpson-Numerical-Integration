@@ -23,6 +23,22 @@ public class IntegralInfo {
      */
     public IntegralInfo() {
     }
+
+    /**
+     *
+     * @param degreesOfFreedom
+     * @param numberOfSegments
+     * @param integralLowerLimit
+     * @param integralUpperLimit
+     * @param expectedResult
+     */
+    public IntegralInfo(double degreesOfFreedom, double numberOfSegments, double integralLowerLimit, double integralUpperLimit, double expectedResult) {
+        this.degreesOfFreedom = degreesOfFreedom;
+        this.numberOfSegments = numberOfSegments;
+        this.integralLowerLimit = integralLowerLimit;
+        this.integralUpperLimit = integralUpperLimit;
+        this.expectedResult = expectedResult;
+    }
     
     /**
      * Segment width getter

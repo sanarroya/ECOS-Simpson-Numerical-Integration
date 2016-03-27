@@ -24,10 +24,9 @@ public class CalculationManager {
         double p = calculateP(integralInfo);
         integralInfo.setNumberOfSegments(integralInfo.getNumberOfSegments() * 2.0);
         double p2 = calculateP(integralInfo);
-        System.out.println("p=" + p + "p2=" + p2);
+
         if((p - p2) < ACCEPTABLE_ERROR) {
             integralInfo.setIntegralResult(p2);
-            System.out.println("La primera vez: " + p2);
             return integralInfo;
         }else {
             return simpsonIntegral(integralInfo);
@@ -40,7 +39,7 @@ public class CalculationManager {
         double tDistribution0Value = tDistributionFunction(integralInfo, 0.0);
         double tDistributionXValue = tDistributionFunction(integralInfo, integralInfo.getIntegralUpperLimit());
         double sumatories = tDistribution0Value + oddSumatory(integralInfo) + evenSumatory(integralInfo) + tDistributionXValue;
-        System.out.println(thirdOfWidth * sumatories);
+
         return  thirdOfWidth * sumatories;
         
     }
