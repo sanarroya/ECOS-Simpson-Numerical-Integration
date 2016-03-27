@@ -12,7 +12,7 @@ package Model;
 public class CalculationManager {
     
    
-    static public final double ACCEPTABLE_ERROR = 0.00001;
+    static private final double ACCEPTABLE_ERROR = 0.00001;
     
     /**
      *Calculates the integral using the Simpson method
@@ -21,13 +21,22 @@ public class CalculationManager {
      * @return
      */
     static public double simpsonIntegral(IntegralInfo integralInfo) {
+        double p = calculateP(integralInfo);
+        integralInfo.setNumberOfSegments(20.0);
+        double p2 = calculateP(integralInfo);
+        
+    }
+    
+    
+    static private double calculateP(IntegralInfo integralInfo) {
         
         double thirdOfWidth = integralInfo.getSegmentWidth() / 3.0;
         double tDistribution0Value = tDistributionFunction(integralInfo, 0.0);
         double tDistributionXValue = tDistributionFunction(integralInfo, integralInfo.getIntegralUpperLimit());
         double sumatories = tDistribution0Value + oddSumatory(integralInfo) + evenSumatory(integralInfo) + tDistributionXValue;
         
-        return  thirdOfWidth * sumatories;    
+        return  thirdOfWidth * sumatories;
+        
     }
     
     /**
@@ -36,9 +45,11 @@ public class CalculationManager {
      * @param value
      * @return Result of calculating gamma function to the given value
      */
-    static public double gammaFunction(double value) {
+    static private double gammaFunction(double value) {
         
         double gammaValue = 1.0;
+        value--;
+        
         do {
             gammaValue *= value;
             value--;
@@ -56,7 +67,7 @@ public class CalculationManager {
      * @param value
      * @return
      */
-    static public double tDistributionFunction(IntegralInfo integralInfo, double value) {
+    static private double tDistributionFunction(IntegralInfo integralInfo, double value) {
         
         double enumerator = gammaFunction((integralInfo.getDegreesOfFreedom() + 1) / 2);
         

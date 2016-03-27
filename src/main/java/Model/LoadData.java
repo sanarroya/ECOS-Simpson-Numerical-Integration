@@ -42,6 +42,7 @@ public class LoadData {
                     integralInfo.setIntegralLowerLimit(Double.parseDouble(stringsInLine[0]));
                     integralInfo.setIntegralUpperLimit(Double.parseDouble(stringsInLine[1]));
                     integralInfo.setDegreesOfFreedom(Double.parseDouble(stringsInLine[2]));
+                    integralInfo.setNumberOfSegments(10.0);
                     dataList.add(integralInfo);
                 }
             }

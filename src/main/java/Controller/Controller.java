@@ -31,7 +31,11 @@ public class Controller {
      * @param integralInfo
      * @return IntegraInfo object with all integral information
      */
-    public IntegralInfo calculateTDistribution(IntegralInfo integralInfo) {
+    public double calculateTDistribution(IntegralInfo integralInfo) {
+        double p = CalculationManager.simpsonIntegral(integralInfo);
+        integralInfo.setNumberOfSegments(20.0);
+        double p2 = CalculationManager.simpsonIntegral(integralInfo);
+        
         integralInfo.setIntegralResult(CalculationManager.tDistribution(integralInfo));
         return integralInfo;
     }

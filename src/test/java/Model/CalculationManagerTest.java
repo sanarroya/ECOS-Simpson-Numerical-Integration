@@ -43,40 +43,10 @@ public class CalculationManagerTest {
     @Test
     public void testSimpsonIntegral() {
         System.out.println("simpsonIntegral");
-        IntegralInfo integralInfo = new IntegralInfo(9, 0, 1.1);
+        IntegralInfo integralInfo = new IntegralInfo(9, 0, 1.1, 10.0);
         double expResult = 0.3500589;
         double result = CalculationManager.simpsonIntegral(integralInfo);
         System.out.println("simpsonIntegral result " + result);
-        assertEquals(expResult, result, 1.0);
+        assertEquals(expResult, result, 0.2);
     }
-
-    /**
-     * Test of gammaFunction method, of class CalculationManager.
-     */
-    @Test
-    public void testGammaFunction() {
-        System.out.println("gammaFunction");
-        double value = 0.0;
-        double expResult = 0.0;
-        double result = CalculationManager.gammaFunction(value);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of tDistributionFunction method, of class CalculationManager.
-     */
-    @Test
-    public void testTDistributionFunction() {
-        System.out.println("tDistributionFunction");
-        IntegralInfo integralInfo = null;
-        double value = 0.0;
-        double expResult = 0.0;
-        double result = CalculationManager.tDistributionFunction(integralInfo, value);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }

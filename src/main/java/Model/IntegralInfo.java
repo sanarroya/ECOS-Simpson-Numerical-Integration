@@ -12,6 +12,7 @@ package Model;
 public class IntegralInfo {
     
     private double degreesOfFreedom;
+    private double numberOfSegments;
     private double integralLowerLimit;
     private double integralUpperLimit;
     private double integralResult;
@@ -25,25 +26,33 @@ public class IntegralInfo {
     /**
      *Constructor of the class
      * 
-     * @param numberOfSegments to integrate
-     * @param segmentWidth width of each segment
      * @param degreesOfFreedom Integration degrees of freedom
      * @param integralLowerLimit Lower limit of the interval in which we will integrate
      * @param integralUpperLimit Upper limit of the interval in which we will integrate
+     * @param numberOfSegments Number of segments to integrate
      */
-    public IntegralInfo(double degreesOfFreedom, double integralLowerLimit, double integralUpperLimit) {
+    public IntegralInfo(double degreesOfFreedom, double integralLowerLimit, double integralUpperLimit, double numberOfSegments) {
         this.degreesOfFreedom = degreesOfFreedom;
         this.integralLowerLimit = integralLowerLimit;
         this.integralUpperLimit = integralUpperLimit;
     }
-
+    
+    /**
+     * Segment width getter
+     * 
+     * @return segment width
+     */
+    public void setNumberOfSegments(double numberOfSegments) {
+        this.numberOfSegments = numberOfSegments;
+    }
+    
     /**
      * Number of segments getter
      * 
      * @return number of segments
      */
     public double getNumberOfSegments() {
-        return 10.0;
+        return numberOfSegments;
     }
 
     /**
