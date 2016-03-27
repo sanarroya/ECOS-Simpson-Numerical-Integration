@@ -42,7 +42,7 @@ public class Main {
         Controller controller = new Controller();
         data = controller.loadClassInfo(FILE_NAME);
         String dataString = "<p><br><table border=\"1\">";
-        dataString += "<tr><td>x</td><td>dof</td><td>Expected<br>Value</td><td>Actual<br>Value</td></tr>";
+        dataString += "<tr align=\"center\"><td>x</td><td>dof</td><td>Expected<br>Value</td><td>Actual<br>Value</td></tr>";
         for(IntegralInfo integralCase : data) {
             integralCase = controller.calculateSimpsonIntegral(integralCase);
             dataString += String.format("<tr><td>%f to x= %f</td><td>%f</td><td>%f</td><td>%f</td></tr>", integralCase.getIntegralLowerLimit(), integralCase.getIntegralUpperLimit(), integralCase.getDegreesOfFreedom(), integralCase.getExpectedResult(), integralCase.getIntegralResult());
