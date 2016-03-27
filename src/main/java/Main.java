@@ -35,7 +35,7 @@ public class Main {
             return new ModelAndView(attributes, "index.ftl");
         }, new FreeMarkerEngine());
     
-    get("/simspsonIntegral", (req, res) -> {
+    get("/simpsonIntegral", (req, res) -> {
        
         final String FILE_NAME = "dataset.txt";
         List<IntegralInfo> data;
