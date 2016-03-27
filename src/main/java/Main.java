@@ -23,6 +23,11 @@ import java.util.List;
  */
 public class Main {
 
+    /**
+     * Main method, where the endpoints are defined
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
 
     port(Integer.valueOf(System.getenv("PORT")));

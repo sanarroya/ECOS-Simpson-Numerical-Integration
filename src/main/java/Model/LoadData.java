@@ -25,7 +25,7 @@ public class LoadData {
     /**
      *Load data from .txt file into a List of ClassInfo objects
      * 
-     * @param filename File to read the data
+     * @param fileName
      * @return classInfo list with the information read from the file
      */
     public static List<IntegralInfo> loadDataFromFile(String fileName) {

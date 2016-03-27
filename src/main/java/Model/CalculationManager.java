@@ -33,6 +33,12 @@ public class CalculationManager {
         }
     }
     
+    /**
+     *Calculates the p value
+     * 
+     * @param integralInfo
+     * @return p value
+     */
     static private double calculateP(IntegralInfo integralInfo) {
         
         double thirdOfWidth = integralInfo.getSegmentWidth() / 3.0;
@@ -69,8 +75,9 @@ public class CalculationManager {
     
     /**
      * Calculates the tDistribution of a value
-     * @param value
-     * @return
+     * @param integralInfo Integral parameters
+     * @param value to calculate the t distribution
+     * @return Result of the t distribution
      */
     static private double tDistributionFunction(IntegralInfo integralInfo, double value) {
         
@@ -89,6 +96,12 @@ public class CalculationManager {
         return division * power;
     }
     
+    /**
+     * Calculates the sumatory of the even numbers
+     * 
+     * @param integralInfo Integral parameters
+     * @return sumatory result
+     */
     static private double evenSumatory(IntegralInfo integralInfo) {
         
         double evenSumatory = 0.0;
@@ -99,6 +112,11 @@ public class CalculationManager {
         return evenSumatory;
     }
     
+    /**
+     * Calculates the sumatory of the odd numbers
+     * @param integralInfo Integral parameters
+     * @return Sumatory result
+     */
     static private double oddSumatory(IntegralInfo integralInfo) {
         
         double oddSumatory = 0.0;

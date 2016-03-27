@@ -17,7 +17,8 @@ import java.util.List;
 public class Controller {
     
     /**
-     * Load data from file into list 
+     * Load data from file into list
+     * 
      * @param fileName File to read the data from
      * @return List of values to be integrated
      */

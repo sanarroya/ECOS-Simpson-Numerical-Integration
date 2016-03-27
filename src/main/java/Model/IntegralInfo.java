@@ -25,7 +25,8 @@ public class IntegralInfo {
     }
 
     /**
-     *
+     *IntegralInfo constructor
+     * 
      * @param degreesOfFreedom
      * @param numberOfSegments
      * @param integralLowerLimit
