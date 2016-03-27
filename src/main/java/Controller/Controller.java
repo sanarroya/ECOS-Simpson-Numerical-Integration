@@ -26,17 +26,12 @@ public class Controller {
     }
     
     /**
-     * Calculates t distribution
+     * Calculates Simpson integral
      * 
      * @param integralInfo
      * @return IntegraInfo object with all integral information
      */
-    public double calculateTDistribution(IntegralInfo integralInfo) {
-        double p = CalculationManager.simpsonIntegral(integralInfo);
-        integralInfo.setNumberOfSegments(20.0);
-        double p2 = CalculationManager.simpsonIntegral(integralInfo);
-        
-        integralInfo.setIntegralResult(CalculationManager.tDistribution(integralInfo));
-        return integralInfo;
+    public IntegralInfo calculateSimpsonIntegral(IntegralInfo integralInfo) {
+        return CalculationManager.simpsonIntegral(integralInfo);
     }
 }

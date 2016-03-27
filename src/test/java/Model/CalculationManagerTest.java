@@ -43,10 +43,15 @@ public class CalculationManagerTest {
     @Test
     public void testSimpsonIntegral() {
         System.out.println("simpsonIntegral");
-        IntegralInfo integralInfo = new IntegralInfo(9, 0, 1.1, 10.0);
-        double expResult = 0.3500589;
-        double result = CalculationManager.simpsonIntegral(integralInfo);
-        System.out.println("simpsonIntegral result " + result);
+        IntegralInfo integralInfo = new IntegralInfo();
+        integralInfo.setIntegralLowerLimit(0.0);
+        integralInfo.setIntegralUpperLimit(1.1);
+        integralInfo.setDegreesOfFreedom(9);
+        integralInfo.setNumberOfSegments(10.0);
+        double expResult = 0.35006;
+        IntegralInfo resultIntegral = CalculationManager.simpsonIntegral(integralInfo);
+        double result = resultIntegral.getIntegralResult();
         assertEquals(expResult, result, 0.2);
     }
+    
 }
