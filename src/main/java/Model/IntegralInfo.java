@@ -16,31 +16,18 @@ public class IntegralInfo {
     private double integralLowerLimit;
     private double integralUpperLimit;
     private double integralResult;
+    private double expectedResult;
 
     /**
      *Empty constructor of the class
      */
     public IntegralInfo() {
     }
-
-    /**
-     *Constructor of the class
-     * 
-     * @param degreesOfFreedom Integration degrees of freedom
-     * @param integralLowerLimit Lower limit of the interval in which we will integrate
-     * @param integralUpperLimit Upper limit of the interval in which we will integrate
-     * @param numberOfSegments Number of segments to integrate
-     */
-    public IntegralInfo(double degreesOfFreedom, double integralLowerLimit, double integralUpperLimit, double numberOfSegments) {
-        this.degreesOfFreedom = degreesOfFreedom;
-        this.integralLowerLimit = integralLowerLimit;
-        this.integralUpperLimit = integralUpperLimit;
-    }
     
     /**
      * Segment width getter
      * 
-     * @return segment width
+     * @param numberOfSegments
      */
     public void setNumberOfSegments(double numberOfSegments) {
         this.numberOfSegments = numberOfSegments;
@@ -133,6 +120,24 @@ public class IntegralInfo {
      */
     public void setIntegralResult(double integralResult) {
         this.integralResult = integralResult;
+    }
+
+    /**
+     *Expected result getter
+     * 
+     * @return expected result
+     */
+    public double getExpectedResult() {
+        return expectedResult;
+    }
+
+    /**
+     *Expected result setter
+     * 
+     * @param expectedResult
+     */
+    public void setExpectedResult(double expectedResult) {
+        this.expectedResult = expectedResult;
     }
     
     

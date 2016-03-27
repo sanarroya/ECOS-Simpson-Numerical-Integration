@@ -1,3 +1,6 @@
+import Controller.Controller;
+import Model.CalculationManager;
+import Model.IntegralInfo;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -12,6 +15,7 @@ import spark.ModelAndView;
 import static spark.Spark.get;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
+import java.util.List;
 
 /**
  *
@@ -31,9 +35,52 @@ public class Main {
             return new ModelAndView(attributes, "index.ftl");
         }, new FreeMarkerEngine());
     
-    get("/simpsonIntegral", (req, res) -> {
-        return "SIMPSON INTEGRAL";
+    get("/simspsonIntegral", (req, res) -> {
+       
+        final String FILE_NAME = "dataset.txt";
+        List<IntegralInfo> data;
+        Controller controller = new Controller();
+        data = controller.loadClassInfo(FILE_NAME);
+        String dataString = "<p><br><table border=\"1\">";
+        
+        for(IntegralInfo integralCase : data) {
+            integralCase = controller.calculateSimpsonIntegral(integralCase);
+            dataString += String.format("<tr><td>%f to x= %f</td><td>%f</td><td>%f</td><td>%f</td></tr>", integralCase.getIntegralLowerLimit(), integralCase.getIntegralUpperLimit(), integralCase.getDegreesOfFreedom(), integralCase.getExpectedResult(), integralCase.getIntegralResult());
+        }
+        
+        dataString += "</table><br>";
+        return dataString;        
     });
+//    get("/simpsonIntegral", (req, res) -> {
+//        
+//        final String FILE_NAME_1 = "dataset1.txt";
+//        List<IntegralInfo> data;
+//        Controller controller = new Controller();
+//        data = controller.loadClassInfo(FILE_NAME_1);
+//        String dataString = "<p><br>";
+//        int count = 1;
+//        
+//        for(IntegralInfo case : data) {
+//        
+//        }
+//            
+////            dataString += String.format("Caso de prueba %d<br><table border=\"1\">", count);
+////            for(ClassInfo classInfo : data) {
+////                dataString += String.format("<tr><td>%s</td><td>%f</td><td>%f</td></tr>", classInfo.getClassName(), classInfo.getLoc(), classInfo.getNumberOfMethods());
+////            }
+////            dataString += "</table><br>";
+////            result = controller.calculateSizeRange(data);
+////            if(count == 1) {
+////                dataString += String.format("<p>VS = %.5g%n LOC/Method<br>S =  %.5g%n LOC/Method<br>M = %.4g%n LOC/Method<br>L = %.4g%n LOC/Method<br>VL = %.4g%n LOC/Method<br></p>", result.getVerySmall(), result.getSmall(), result.getMedium(), result.getLarge(), result.getVeryLarge());
+////
+////            }else {
+////                dataString += String.format("<p>VS = %.5g%n pages/Chapter<br>S =  %.5g%n pages/Chapter<br>M = %.4g%n pages/Chapter<br>L = %.4g%n pages/Chapter<br>VL = %.4g%n pages/Chapter<br></p>", result.getVerySmall(), result.getSmall(), result.getMedium(), result.getLarge(), result.getVeryLarge());
+//// 
+////            }
+////            count++;
+//        
+//        return dataString;
+//    });
     
     get("/db", (req, res) -> {
       Connection connection = null;
