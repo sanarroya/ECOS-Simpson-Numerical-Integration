@@ -1,0 +1,6 @@
+{
+  "name": "Ecos simpson Numerical Integration",
+  "tagline": "Program to numerically integrate a function using Simpson’s rule, using the t distribution as the function.",
+  "body": "# Simpson numerical integration\r\n\r\nProgram to numerically integrate a function using Simpson’s rule, using the t distribution as the function.\r\n\r\n## Running Locally\r\n\r\nMake sure you have Java and Maven installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).\r\n\r\n```sh\r\n$ git clone https://github.com/sanarroya/ECOS-Simpson-Numerical-Integration.git\r\n$ cd ECOS-Simpson-Numerical-Integration\r\n$ mvn clean install\r\n$ heroku local web\r\n```\r\n\r\nYour app should now be running on [localhost:5000](http://localhost:5000/).\r\n\r\n## Heroku\r\n\r\nTo access the application on heroku go to the following link:\r\n\r\n- [Simpson numerical integration](https://shrouded-hamlet-63058.herokuapp.com/simpsonIntegral)",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
